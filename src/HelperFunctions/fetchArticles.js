@@ -1,12 +1,15 @@
 const axios = require("axios");
 
-function fetchArticles() {
-  return axios
-    .get("https://nc-news-example-seminar-3-7.herokuapp.com/api/articles")
-    .then(({data:{articles}}) => {
-      console.log(articles);
-      return articles;
-    });
+function fetchArticles(topicQuery) {
+
+  let url = "https://nc-news-example-seminar-3-7.herokuapp.com/api/articles";
+
+  if (topicQuery) {
+    url += `?topic=${topicQuery}`;
+  }
+  return axios.get(url).then(({ data: { articles } }) => {
+    return articles;
+  });
 }
 
 export default fetchArticles;
