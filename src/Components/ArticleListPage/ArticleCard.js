@@ -3,19 +3,17 @@ import React from "react";
 function ArticleCard({ article }) {
   return (
     <div className="article-card">
-      Article ID: {article.article_id}
+      TITLE: {article.title}
       <br></br>
-      title: {article.title}
+      TOPIC: {article.topic}
       <br></br>
-      topic: {article.topic}
+      AUTHOR: {article.author}
       <br></br>
-      author: {article.author}
+      VOTES: {article.votes}
       <br></br>
-      votes: {article.votes}
+      CREATED: {article.created_at}
       <br></br>
-      created at: {article.created_at}
-      <br></br>
-      comment count: {article.comment_count}
+      COMMENT COUNT: {article.comment_count}
       <br></br>
     </div>
   );

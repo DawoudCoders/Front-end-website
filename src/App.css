@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(255, 255, 255);
 }
 
 ul {
@@ -8,7 +9,7 @@ ul {
 .article-card {
   border-bottom: 1px black solid;
   padding: 4px;
-  margin-left:0;
+  margin-left: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -18,7 +19,26 @@ ul {
 }
 
 .article-card:hover {
-  color: rgb(17, 0, 248);
   background-color: rgba(224, 221, 221, 0.87);
   border-bottom: 1px rgb(58, 4, 255) solid;
+}
+
+.nav {
+  border-bottom: 1px rgb(255, 255, 255) solid;
+  border-top: 1px rgb(255, 255, 255) solid;
+  padding: 0.7em;
+}
+
+.header {
+  padding-top: 0;
+  margin-top: 0;
+  color: white;
+  background-color: rgba(4, 0, 255, 100);
+}
+.header:a {
+  padding-top: 131px;
+}
+* {
+  padding: 0;
+  margin: 0;
 }
