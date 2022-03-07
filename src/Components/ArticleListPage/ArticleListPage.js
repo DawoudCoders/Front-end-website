@@ -18,8 +18,8 @@ function ArticleListPage() {
   } else {
     return (
       <div>
-        <h2>Articles List:</h2>
-        
+        <h1 className="article-header">Articles List:</h1>
+
         <div>
           <ul>
             {articles.map((article, index) => {
