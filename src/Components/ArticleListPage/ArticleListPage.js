@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import fetchArticles from "../../HelperFunctions/fetchArticles";
-import fetchTopics from "../../HelperFunctions/fetchTopics";
 import ArticleDropDownMenus from "./ArticleDropDownMenus";
+
 function ArticleListPage() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [topicQuery, setTopicQuery] = useState([]);
+  const [query, setQuery] = useState({
+    topic: "coding",
+    sort_by: "title",
+    order: "DESC",
+  });
 
   useEffect(() => {
-    fetchArticles(topicQuery).then((response) => {
+    fetchArticles(query).then((response) => {
       setArticles(response);
       setLoading(false);
     });
-  }, [topicQuery]);
+  }, [query]);
 
-  console.log(topicQuery);
-  
+  console.log(query);
+
   if (loading) {
     return <div>Loading</div>;
   } else {
     return (
       <div>
         <h1 className="article-header">Articles List:</h1>
-        <ArticleDropDownMenus
-          topicQuery={topicQuery}
-          setTopicQuery={setTopicQuery}
-        />
+        <ArticleDropDownMenus query={query} setQuery={setQuery} />
         <div>
           <ul>
-            {articles.map((article, index) => {
+            {articles.map((article) => {
               return (
-                <li key={index}>
+                <li key={article.article_id}>
                   <ArticleCard article={article} />
                 </li>
               );

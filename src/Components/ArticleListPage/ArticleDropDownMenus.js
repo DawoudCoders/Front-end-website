@@ -1,31 +1,48 @@
 import React from "react";
 
-function ArticleDropDownMenus({ topicQuery, setTopicQuery }) {
+function ArticleDropDownMenus({ Query, setQuery }) {
   const handleTopicChange = (event) => {
-    setTopicQuery(event.target.value);
+    setQuery((currentQuery) => {
+      let copyQuery = { ...currentQuery };
+      copyQuery.topic = event.target.value;
+      return copyQuery;
+    });
   };
-  console.log(topicQuery);
+  const handleSortByChange = (event) => {
+    setQuery((currentQuery) => {
+      let copyQuery = { ...currentQuery };
+      copyQuery.sort_by = event.target.value;
+      return copyQuery;
+    });
+  };
+  const handleOrderChange = (event) => {
+    setQuery((currentQuery) => {
+      let copyQuery = { ...currentQuery };
+      copyQuery.order = event.target.value;
+      return copyQuery;
+    });
+  };
   return (
     <div className="article-page-forms">
       <form>
         <label> Select Topic </label>
         <select onChange={handleTopicChange}>
-          <option value="?topic=coding"> Coding</option>
-          <option value="?topic=football"> Football</option>
-          <option value="?topic=cooking"> Cooking</option>
+          <option value="coding"> Coding</option>
+          <option value="football"> Football</option>
+          <option value="cooking"> Cooking</option>
         </select>
         <label> Select SortBy </label>
-        <select onChange={handleTopicChange}>
-          <option value="?sort_by=title"> Title</option>
-          <option value="?sort_by=author"> Author</option>
-          <option value="?sort_by=votes"> Votes</option>
-          <option value="?sort_by=created_at"> Created At</option>
-          <option value="?sort_by=comment_count"> Comment Count</option>
+        <select onChange={handleSortByChange}>
+          <option value="title"> Title</option>
+          <option value="author"> Author</option>
+          <option value="votes"> Votes</option>
+          <option value="created_at"> Created At</option>
+          <option value="comment_count"> Comment Count</option>
         </select>
         <label> Select OrderBy </label>
-        <select onChange={handleTopicChange}>
-          <option value="?order=ASC"> Asc</option>
-          <option value="?order=DESC"> Desc</option>
+        <select onChange={handleOrderChange}>
+          <option value="DESC"> Desc</option>
+          <option value="ASC"> Asc</option>
         </select>
       </form>
     </div>
