@@ -10,23 +10,22 @@ function ArticleDropDownMenus({ topicQuery, setTopicQuery }) {
       <form>
         <label> Select Topic </label>
         <select onChange={handleTopicChange}>
-          <option value="coding"> Coding</option>
-          <option value="football"> Football</option>
-          <option value="cooking"> Cooking</option>
+          <option value="?topic=coding"> Coding</option>
+          <option value="?topic=football"> Football</option>
+          <option value="?topic=cooking"> Cooking</option>
         </select>
         <label> Select SortBy </label>
-        <select>
-          <option value="TITLE"> Title</option>
-          <option value="TOPIC"> Topic</option>
-          <option value="AUTHOR"> Author</option>
-          <option value="VOTES"> Votes</option>
-          <option value="CREATED_AT"> Created At</option>
-          <option value="COMMENT_COUNT"> Comment Count</option>
+        <select onChange={handleTopicChange}>
+          <option value="?sort_by=title"> Title</option>
+          <option value="?sort_by=author"> Author</option>
+          <option value="?sort_by=votes"> Votes</option>
+          <option value="?sort_by=created_at"> Created At</option>
+          <option value="?sort_by=comment_count"> Comment Count</option>
         </select>
         <label> Select OrderBy </label>
-        <select>
-          <option value="ASC"> Asc</option>
-          <option value="DESC"> Desc</option>
+        <select onChange={handleTopicChange}>
+          <option value="?order=ASC"> Asc</option>
+          <option value="?order=DESC"> Desc</option>
         </select>
       </form>
     </div>

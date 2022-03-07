@@ -14,7 +14,9 @@ function ArticleListPage() {
       setLoading(false);
     });
   }, [topicQuery]);
+
   console.log(topicQuery);
+  
   if (loading) {
     return <div>Loading</div>;
   } else {
