@@ -25,13 +25,13 @@ function ArticleDropDownMenus({ Query, setQuery }) {
   return (
     <div className="article-page-forms">
       <form>
-        <label> Select Topic </label>
+        <label className="label-headers"> Select Topic </label>
         <select onChange={handleTopicChange}>
           <option value="coding"> Coding</option>
           <option value="football"> Football</option>
           <option value="cooking"> Cooking</option>
         </select>
-        <label> Select SortBy </label>
+        <label className="label-headers"> Select SortBy </label>
         <select onChange={handleSortByChange}>
           <option value="title"> Title</option>
           <option value="author"> Author</option>
@@ -39,7 +39,7 @@ function ArticleDropDownMenus({ Query, setQuery }) {
           <option value="created_at"> Created At</option>
           <option value="comment_count"> Comment Count</option>
         </select>
-        <label> Select OrderBy </label>
+        <label className="label-headers"> Select OrderBy </label>
         <select onChange={handleOrderChange}>
           <option value="DESC"> Desc</option>
           <option value="ASC"> Asc</option>
