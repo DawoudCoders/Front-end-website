@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 function Header() {
   const username = useContext(UsernameContext);
-  console.log(username);
+  
   return (
     <div className="header">
       <div>

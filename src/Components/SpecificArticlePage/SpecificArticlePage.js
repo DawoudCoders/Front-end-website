@@ -24,7 +24,7 @@ function SpecificArticlePage() {
         setComments(comments);
         setLoading(false);
       });
-  }, []);
+  }, [comments]);
 
   if (loading) {
     return <div>Loading</div>;
@@ -35,7 +35,7 @@ function SpecificArticlePage() {
         <div className="specific-article-body">{article.body} </div>
         <VoteOnArticle article={article} />
        
-        <PostNewComment />
+        <PostNewComment article={article}/>
         <CommentCard comments={comments} />
       </div>
     );
