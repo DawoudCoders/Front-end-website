@@ -117,3 +117,11 @@ ul {
   color: white;
   padding: 1em;
 }
+
+.comment-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  padding: 1rem;
+}
