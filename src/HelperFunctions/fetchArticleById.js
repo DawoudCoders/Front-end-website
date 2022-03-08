@@ -6,7 +6,7 @@ function fetchArticleById(articleId) {
       `https://nc-news-example-seminar-3-7.herokuapp.com/api/articles/${articleId}`
     )
     .then(({ data }) => {
-      console.log(data.article);
+     
       return data.article;
     });
 }

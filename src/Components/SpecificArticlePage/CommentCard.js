@@ -1,14 +1,14 @@
 import React from "react";
 
 function CommentCard({ comments }) {
-  console.log(comments);
+  
   return (
-    <div >
+    <div>
       <ul>
         {comments.map((comment) => {
           return (
-            <li className="comment-card">
-              <div >{comment.body}</div>
+            <li key={comment.comment_id} className="comment-card">
+              <div>{comment.body}</div>
               <div>Posted By: {comment.author}</div>
               <div>Votes: {comment.votes}</div>
             </li>
