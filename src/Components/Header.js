@@ -1,6 +1,10 @@
 import React from "react";
+import { UsernameContext } from "../Contexts/UsernameContext";
+import { useContext } from "react";
 
 function Header() {
+  const username = useContext(UsernameContext);
+  
   return (
     <div className="header">
       <div>
@@ -14,7 +18,7 @@ function Header() {
         </nav>
       </div>
       <div>
-        <p>SignedInAs:</p>
+        <p>SignedInAs: {username}</p>
       </div>
     </div>
   );

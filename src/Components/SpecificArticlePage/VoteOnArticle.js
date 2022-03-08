@@ -4,25 +4,30 @@ import patchArticleById from "../../HelperFunctions/patchArticleById";
 
 function VoteOnArticle({ article }) {
   const [votes, setVotes] = useState(article.votes);
-  const [canVote, setCanVote] = useState(0);
-  const [err, setErr] = useState(false);
+  const [canVote, setCanVote] = useState(true);
+  const [err, setErr] = useState(null);
 
   const handlevote = (event) => {
-    setVotes((currentVotes) => {
-      return currentVotes + parseInt(event.target.value);
-    });
-    setCanVote((current) => current + parseInt(event.target.value));
-    patchArticleById(article.article_id, parseInt(event.target.value)).catch(
-      (err) => {
-        console.log(err);
-        //unsure of how to get the actual error response shown 
-        setErr(true);
-      }
-    );
+    if (canVote) {
+      setVotes((currentVotes) => {
+        return currentVotes + parseInt(event.target.value);
+      });
+      setCanVote(false);
+      patchArticleById(article.article_id, parseInt(event.target.value)).catch(
+        (err) => {
+          setErr(err.response.data.msg);
+        }
+      );
+    }
   };
-  console.log(err);
+ 
   if (err) {
-    return <div className="error">There was an error processing your request: {err}</div>;
+    return (
+      <div className="error">
+        You're vote could not be counted right now, please try again later{" "}
+        <br></br>({err})
+      </div>
+    );
   } else {
     return (
       <div className="vote-on-article">
