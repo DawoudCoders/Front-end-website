@@ -69,10 +69,6 @@ ul {
 
 .specific-article-body {
   border: 1px rgb(104, 103, 103) solid;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 5px;
-  margin-left: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -80,7 +76,8 @@ ul {
   color: rgb(51, 50, 50);
   border-radius: 100px;
   max-width: 90rem;
-  min-height: 20rem;
+  padding: 2rem;
+
   margin: auto;
   margin-top: 5px;
   font-weight: 500;
