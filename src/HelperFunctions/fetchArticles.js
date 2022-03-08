@@ -11,7 +11,7 @@ function fetchArticles(query) {
       },
     })
     .then(({ data: { articles } }) => {
-      console.log(articles);
+    
       return articles;
     });
 }
