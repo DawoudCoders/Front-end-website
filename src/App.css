@@ -93,3 +93,27 @@ ul {
 .label-headers {
   color: white;
 }
+.vote-on-article {
+  max-width: 6rem;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.number-of-votes {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: white;
+}
+.vote-article-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.error {
+  color: white;
+  padding: 1em;
+}

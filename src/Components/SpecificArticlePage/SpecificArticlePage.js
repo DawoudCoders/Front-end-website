@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import fetchArticleById from "../../HelperFunctions/fetchArticleById";
 import fetchComments from "../../HelperFunctions/fetchComments";
 import CommentCard from "./CommentCard";
+import VoteOnArticle from "./VoteOnArticle"
+
 function SpecificArticlePage() {
   const { articleId } = useParams();
   const [article, setArticle] = useState({});
@@ -30,6 +32,7 @@ function SpecificArticlePage() {
       <div>
         <h1 className="specific-article-headers">{article.title}</h1>
         <div className="specific-article-body">{article.body} </div>
+        <VoteOnArticle article={article}/>
         <h2 className="specific-article-headers"> Comments:</h2>
         <CommentCard comments={comments} />
       </div>
