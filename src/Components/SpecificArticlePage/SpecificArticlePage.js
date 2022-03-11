@@ -36,7 +36,7 @@ function SpecificArticlePage() {
         <div className="specific-article-body">{article.body} </div>
         <VoteOnArticle article={article} />
         <PostNewComment article={article} setComments={setComments} />
-        <CommentCard comments={comments} />
+        <CommentCard comments={comments} setComments={setComments}/>
       </div>
     );
   }

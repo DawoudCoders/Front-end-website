@@ -4,23 +4,21 @@ import patchArticleById from "../../HelperFunctions/patchArticleById";
 
 function VoteOnArticle({ article }) {
   const [votes, setVotes] = useState(article.votes);
-  const [canVote, setCanVote] = useState(true);
+  const [canVote, setCanVote] = useState(0);
   const [err, setErr] = useState(null);
 
   const handlevote = (event) => {
-    if (canVote) {
-      setVotes((currentVotes) => {
-        return currentVotes + parseInt(event.target.value);
-      });
-      setCanVote(false);
-      patchArticleById(article.article_id, parseInt(event.target.value)).catch(
-        (err) => {
-          setErr(err.response.data.msg);
-        }
-      );
-    }
+    setVotes((currentVotes) => {
+      return (currentVotes += parseInt(event.target.value));
+    });
+    setCanVote((current) => (current += parseInt(event.target.value)));
+    patchArticleById(article.article_id, parseInt(event.target.value)).catch(
+      (err) => {
+        setErr(err.response.data.msg);
+      }
+    );
   };
- 
+  console.log(canVote);
   if (err) {
     return (
       <div className="error">
@@ -33,10 +31,20 @@ function VoteOnArticle({ article }) {
       <div className="vote-on-article">
         <div className="number-of-votes">Votes: {votes}</div>
 
-        <button value={1} onClick={handlevote} className="vote-article-button">
+        <button
+          disabled={canVote === 1}
+          value={1}
+          onClick={handlevote}
+          className="vote-article-button"
+        >
           Vote Up
         </button>
-        <button value={-1} onClick={handlevote} className="vote-article-button">
+        <button
+          disabled={canVote === -1}
+          value={-1}
+          onClick={handlevote}
+          className="vote-article-button"
+        >
           Vote Down
         </button>
       </div>
