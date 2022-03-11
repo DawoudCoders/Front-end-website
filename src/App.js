@@ -4,21 +4,24 @@ import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SpecificArticlePage from "./Components/SpecificArticlePage/SpecificArticlePage";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { UsernameContext } from "./Contexts/UsernameContext";
 import SignInPage from "./Components/SignInPage/SignInPage";
 
 function App() {
-  const [username, setUsername] = useState("Dawoud");
+ const [username, setUsername] = useState("dawoud")
   return (
-    <UsernameContext.Provider value={username}>
+    <UsernameContext.Provider value={{username,setUsername}} >
       <BrowserRouter>
         <div className="App">
           <Header />
           <Routes>
             <Route path="/" element={<ArticleListPage />} />
             <Route path="/:articleId" element={<SpecificArticlePage />} />
-            <Route path="/signIn" element={<SignInPage setUsername={setUsername} />} />
+            <Route
+              path="/signIn"
+              element={<SignInPage/>}
+            />
           </Routes>
         </div>
       </BrowserRouter>

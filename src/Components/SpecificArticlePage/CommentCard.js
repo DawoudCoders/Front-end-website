@@ -50,7 +50,7 @@ function CommentCard({ comments, setComments }) {
                 <div>{comment.body} </div>
                 <div>Posted By: {comment.author}</div>
                 <div>Votes: {comment.votes}</div>
-                {comment.author === "weegembump" && (
+                {comment.author === sessionStorage.getItem("username") && (
                   <button
                     onClick={() => {
                       handleDeleteComment(comment.comment_id);
