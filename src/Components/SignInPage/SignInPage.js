@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
 import fetchUsername from "../../HelperFunctions/fetchUsername";
+import { UsernameContext } from "../../Contexts/UsernameContext";
 
-function SignInPage({ setUsername }) {
+function SignInPage() {
   const [inputValue, setInputValue] = useState("");
   const [logInErr, setLogInErr] = useState(false);
+  const { username, setUsername } = useContext(UsernameContext);
 
   const handleSignIn = () => {
-    console.log("hello");
     fetchUsername(inputValue)
       .then((response) => {
-        setUsername(inputValue);
+        sessionStorage.setItem("username", inputValue);
+        setUsername(sessionStorage.getItem("username"));
+        setLogInErr(false);
       })
       .catch((err) => {
         setLogInErr(true);

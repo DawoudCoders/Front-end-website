@@ -7,7 +7,7 @@ import CommentCard from "./CommentCard";
 function PostNewComment({ article, setComments }) {
   const [commentObj, setCommentObj] = useState({
     article_id: article.article_id,
-    author: "weegembump",
+    author: sessionStorage.getItem("username"),
     body: "",
     votes: 0,
   });
@@ -28,7 +28,7 @@ function PostNewComment({ article, setComments }) {
           setCommentObj({
             body: "",
             votes: 0,
-            author: "weegembump",
+            author: sessionStorage.getItem("username")
           });
           setSubmitErr(false);
           setLengthError(false);
