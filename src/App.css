@@ -185,3 +185,13 @@ button:hover {
   padding-top: 0;
   margin-top: 0;
 }
+
+.delete-comment-button {
+  color: black;
+}
+.sign-in {
+  padding: 5rem;
+}
+.signin-info-box {
+  margin: 234rem;
+}

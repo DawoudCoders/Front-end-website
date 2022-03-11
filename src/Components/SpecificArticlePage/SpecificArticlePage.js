@@ -13,6 +13,7 @@ function SpecificArticlePage() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
+
     fetchArticleById(articleId)
       .then((response) => {
         setArticle(response);
@@ -24,7 +25,7 @@ function SpecificArticlePage() {
         setComments(comments);
         setLoading(false);
       });
-  }, [comments]);
+  }, []);
 
   if (loading) {
     return <div>Loading</div>;
@@ -34,9 +35,8 @@ function SpecificArticlePage() {
         <h1 className="specific-article-headers">{article.title}</h1>
         <div className="specific-article-body">{article.body} </div>
         <VoteOnArticle article={article} />
-       
-        <PostNewComment article={article}/>
-        <CommentCard comments={comments} />
+        <PostNewComment article={article} setComments={setComments} />
+        <CommentCard comments={comments} setComments={setComments}/>
       </div>
     );
   }
