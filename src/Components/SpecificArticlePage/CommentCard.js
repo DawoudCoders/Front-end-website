@@ -47,19 +47,23 @@ function CommentCard({ comments, setComments }) {
           return (
             <div key={comment.comment_id}>
               <li className="comment-card">
-                <div>{comment.body} </div>
-                <div>Posted By: {comment.author}</div>
-                <div>Votes: {comment.votes}</div>
-                {comment.author === sessionStorage.getItem("username") && (
-                  <button
-                    onClick={() => {
-                      handleDeleteComment(comment.comment_id);
-                    }}
-                    className="delete-comment-button"
-                  >
-                    Delete your comment
-                  </button>
-                )}
+                <div className="comment-card-upper">
+                  <div>{comment.body} </div>
+                </div>
+                <div className="comment-card-lower"> 
+                  <div>Posted By: {comment.author}</div>
+                  <div>Votes: {comment.votes}</div>
+                  {comment.author === sessionStorage.getItem("username") && (
+                    <button
+                      onClick={() => {
+                        handleDeleteComment(comment.comment_id);
+                      }}
+                      className="delete-comment-button"
+                    >
+                      Delete your comment
+                    </button>
+                  )}
+                </div>
               </li>
               {deleteErr /* && deletedCommentId == comment.comment_id */ && (
                 <p className="error">
