@@ -6,3 +6,4 @@ To run locally:
 3)Run "npm start" in the terminal, this will open up a local version of the webpage.
 
 Link to the hosted version:
+https://dawoudsfrontendapp.netlify.app/
