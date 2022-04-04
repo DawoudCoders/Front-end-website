@@ -41,9 +41,16 @@ function SignInPage() {
           SignIn
         </button>
       </form>
-      <div>
-        List of usernames: cooljmessy, happyamy2016, tickle122, weegembump,
-        jessjelly, grumpy19{" "}
+      <div className="username-info">
+        List of usernames that can currently be used to sign in with:{" "}
+        <ul>
+          <li>cooljmessy</li>
+          <li>happyamy2016</li>
+          <li>tickle122</li>
+          <li>weegembump</li>
+          <li>jessjelly</li>
+          <li> grumpy19</li>
+        </ul>{" "}
         {logInErr && (
           <p className="error">Please login with a valid username!</p>
         )}

@@ -18,7 +18,7 @@ function VoteOnArticle({ article }) {
       }
     );
   };
-  console.log(canVote);
+
   if (err) {
     return (
       <div className="error">

@@ -73,7 +73,7 @@ function PostNewComment({ article, setComments }) {
         </button>
       </form>
       {lengthError && (
-        <p className="error">Comment needs to be 3 or more characters! </p>
+        <p className="error">Comment needs to be 2 or more characters! </p>
       )}
       {submitErr && (
         <p className="error">

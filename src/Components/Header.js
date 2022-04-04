@@ -8,32 +8,20 @@ function Header() {
   return (
     <div className="header">
       <div>
-        <h2>Dawoud's Articles</h2>
+        <h2 className="header-name">Dawoud's Articles</h2>
       </div>
 
       <div>
         <nav className="nav">
-          <a href="/"> Articles</a> |<a href="/signIn"> Sign In</a>
+          <a href="/"> <p>Articles</p></a> <a href="/signIn"> <p>Sign In</p></a>
         </nav>
       </div>
-      <div>
-        <p>SignedInAs: {sessionStorage.getItem("username")}</p>
+      <div className="header-signedIn">
+        <p>{sessionStorage.getItem("username")?`User: ${sessionStorage.getItem("username")}`: "(Sign In To View User)"}</p>
       </div>
     </div>
 
-    // <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    //   <div class="container-fluid">
-    //     <span class="navbar-brand mb-1 h1">Dawoud's Articles</span>
-
-    //     <a class="nav-link active" aria-current="page" href="#">
-    //       Articles
-    //     </a>
-
-    //     <a class="nav-link active" aria-current="page" href="#">
-    //       Sign In
-    //     </a>
-    //   </div>
-    // </nav>
+   
   );
 }
 

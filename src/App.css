@@ -2,25 +2,45 @@
   text-align: center;
 }
 body {
-  background-image: linear-gradient(to right, rgb(0, 26, 255), rgb(51, 255, 0));
+  /* background-image: linear-gradient(to right, rgb(0, 26, 255), rgb(51, 255, 0)); */
   /* background-color: rgba(0, 0, 255, 0.7); */
+  background-color: rgba(146, 128, 128, 0.418);
 }
 
 ul {
   list-style: none;
 }
-.article-card,
-.comment-card {
-  border: 1px rgb(104, 103, 103) solid;
+.article-card {
+  border: 1px rgba(255, 255, 255, 0.1) solid;
   padding: 10px;
   margin-bottom: 10px;
   margin-left: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+
   background-color: rgba(255, 255, 255, 0.6);
   color: rgb(51, 50, 50);
-  border-radius: 100px;
+  border-radius: 45px;
+  max-width: 60rem;
+  min-height: 8rem;
+  margin: auto;
+  margin-bottom: 10px;
+
+  color: grey;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.comment-card {
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  display: flex;
+ flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: grey;
+  border-radius: px;
   max-width: 60rem;
   min-height: 8rem;
   margin: auto;
@@ -28,42 +48,88 @@ ul {
   font-weight: 500;
 }
 
+.comment-card-upper{
+  padding: 1rem;
+  border-bottom: 1px solid white;
+
+}
+.comment-card-lower{
+  padding-top: 1rem;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
 .article-card:hover {
   background-color: rgba(255, 255, 255, 0.87);
-  border: 1px rgb(238, 255, 0) solid;
+  border: 1px grey solid;
 
   cursor: pointer;
 }
-
+.article-link {
+  text-decoration: none;
+}
+.article-title {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  padding-top: 0.2rem;
+  font-size: larger;
+}
+.article-lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.article-info {
+  text-align: left;
+}
 .nav {
   border-bottom: 1px rgb(255, 255, 255) solid;
   border-top: 1px rgb(255, 255, 255) solid;
   padding: 0.7em;
 }
+.nav > a {
+  color: grey;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-top: 1rem;
+  padding: 1rem;
+}
+.nav > a > p {
+  background-color: rgb(232, 235, 235, 0.55);
+  padding: 0.7rem;
+  border-radius: 1rem;
+}
+.header-signedIn {
+  color: grey;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
 
 .header {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: baseline;
   padding-top: 0;
   margin-top: 0;
-  padding-bottom: 5px;
+  padding-bottom: 1px;
   margin-bottom: 5px;
   color: rgb(8, 8, 8);
-  background-color: white;
-  -moz-box-shadow: 3px 3px 5px 1px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 1px #ccc;
-  box-shadow: 3px 3px 5px 6px #ccc;
+  background-color: rgb(247, 246, 246);
+  border-bottom: 1px solid grey;
 }
 
-* {
-  padding: 0;
-  margin: 0;
+.header-name {
+  color: grey;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding-top: 1rem;
 }
 
 .article-header {
   padding: 1rem;
-  color: white;
+  font-weight: 400;
+  color: grey;
 }
 
 .article-page-forms {
@@ -76,7 +142,7 @@ ul {
   align-items: center;
   justify-content: space-evenly;
   background-color: rgba(255, 255, 255, 0.6);
-  color: rgb(51, 50, 50);
+  color: grey;
   border-radius: 100px;
   max-width: 90rem;
   padding: 2rem;
@@ -87,11 +153,14 @@ ul {
 }
 
 .specific-article-headers {
-  padding: 1rem;
-  color: white;
+  padding: 2rem;
+  color: grey;
+  font-size: 3rem;
+  font-weight: 400;
 }
 .label-headers {
-  color: white;
+  color: grey;
+  padding: 0.5rem;
 }
 .vote-on-article {
   max-width: 6rem;
@@ -104,11 +173,11 @@ ul {
 .number-of-votes {
   margin-left: 1rem;
   margin-right: 1rem;
-  color: rgba(255, 255, 255, 0.507);
+
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   border: none;
-  color: rgb(255, 255, 255);
+  color: grey;
   font-weight: bold;
   padding: 15px 32px;
   text-align: center;
@@ -117,14 +186,16 @@ ul {
   font-size: 16px;
 }
 .vote-article-button {
+  color: grey;
   margin-left: 1rem;
   margin-right: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  min-width: 5rem;
 }
 
 .error {
-  color: white;
+  color: grey;
   padding: 1em;
 }
 
@@ -140,7 +211,7 @@ button {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   border: none;
-  color: white;
+  color: grey;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -158,7 +229,7 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   border: none;
-  color: rgb(0, 0, 0);
+  color: grey;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -172,7 +243,7 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.589);
   border-radius: 15px;
   border: none;
-  color: rgb(0, 0, 0);
+  color: grey;
   padding: 15px 32px;
   margin-bottom: 20px;
   text-decoration: none;
@@ -194,4 +265,11 @@ button:hover {
 }
 .signin-info-box {
   margin: 234rem;
+}
+
+.username-info{
+  padding:1rem;
+  color: grey;
+  font-size: 1rem;
+  font-weight: 600;
 }

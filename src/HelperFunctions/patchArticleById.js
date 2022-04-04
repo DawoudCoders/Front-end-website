@@ -7,7 +7,6 @@ function patchArticleById(article_id, voteChange) {
       { inc_votes: voteChange }
     )
     .then((response) => {
-      console.log(response);
       return response;
     })
     
