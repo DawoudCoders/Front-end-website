@@ -54,7 +54,7 @@ function CommentCard({ comments, setComments }) {
                   )}
                 </div>
               </li>
-              {deleteErr /* && deletedCommentId == comment.comment_id */ && (
+              {deleteErr  && (
                 <p className="error">
                   There was an issue deleting your comment, please try again
                   later. Error message: "{deleteErr}"
