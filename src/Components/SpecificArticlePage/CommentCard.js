@@ -25,20 +25,9 @@ function CommentCard({ comments, setComments }) {
       return filterArr;
     });
 
-    deleteComment(commentId); /* .catch((err) => {
-      setComments((currentComments) => {
-        console.log(currentComments);
-        return [...currentComments, restoredComment];
-      });
-    }); */
-  };
-
-  /*  const restoreComments = () => {
-    console.log("helloo");
-    console.log(restoredComments)
+    deleteComment(commentId); 
   
   };
- */
 
   return (
     <div>

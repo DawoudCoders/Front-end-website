@@ -19,7 +19,7 @@ function ArticleListPage() {
     });
   }, [query]);
 
-  console.log(query);
+
 
   if (loading) {
     return <div>Loading</div>;
