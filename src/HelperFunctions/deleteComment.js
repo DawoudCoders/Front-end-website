@@ -4,7 +4,7 @@ function deleteComment(comment_id) {
 
   return axios
     .delete(
-      `https://nc-news-example-seminar-3-7.herokuapp.com/api/comments/${comment_id}`
+      `https://first-heroku-hosting-project.herokuapp.com/api/comments/${comment_id}`
     )
     .then((response) => {
 
@@ -13,3 +13,4 @@ function deleteComment(comment_id) {
 }
 
 export default deleteComment;
+

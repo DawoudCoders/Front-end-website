@@ -5,7 +5,7 @@ function postComment(articleId, body) {
 
   return axios
     .post(
-      `https://nc-news-example-seminar-3-7.herokuapp.com/api/articles/${articleId}/comments`,
+      `https://first-heroku-hosting-project.herokuapp.com/api/articles/${articleId}/comments`,
       { body: body, username: username }
     )
     .then((response) => {

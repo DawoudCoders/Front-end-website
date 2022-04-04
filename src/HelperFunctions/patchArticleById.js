@@ -3,7 +3,7 @@ const axios = require("axios");
 function patchArticleById(article_id, voteChange) {
   return axios
     .patch(
-      `https://nc-news-example-seminar-3-7.herokuapp.com/api/articles/${article_id}`,
+      `https://first-heroku-hosting-project.herokuapp.com/api/article/${article_id}`,
       { inc_votes: voteChange }
     )
     .then((response) => {

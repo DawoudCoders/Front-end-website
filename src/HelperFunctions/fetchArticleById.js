@@ -3,7 +3,7 @@ const axios = require("axios");
 function fetchArticleById(articleId) {
   return axios
     .get(
-      `https://nc-news-example-seminar-3-7.herokuapp.com/api/articles/${articleId}`
+      `https://first-heroku-hosting-project.herokuapp.com/api/articles/${articleId}`
     )
     .then(({ data }) => {
      
